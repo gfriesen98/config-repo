@@ -1,7 +1,7 @@
 # config-repo
 automated backup/deployment of my arch linux dotfiles/configs
 
-- to install everything, run `./post-install.sh`.
+- to install all packages + dotfiles, run `./post-install.sh`.
 - to install only dotfiles, run `./deploy-config-repo.sh`
 - to update the repository, run `./update-config.repo.sh`
 
