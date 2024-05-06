@@ -1,6 +1,11 @@
 # config-repo
 automated backup/deployment of my arch linux dotfiles/configs
 
+these scripts are assuming [arch-notes](https://github.com/gfriesen98/config-repo/blob/main/arch-notes.md) were used when installing
+
+1. installed using `archinstall`
+2. used `Desktop` when selecting an install type
+
 - to install all packages + dotfiles, run `./post-install.sh`.
 - to install only dotfiles, run `./deploy-config-repo.sh`
 - to update the repository, run `./update-config.repo.sh`
