@@ -94,7 +94,7 @@ bindsym $mod+slash split vertical ;; exec $term
 
 # I3 BINDS
 bindsym $mod+Shift+f2 reload
-bindsym $mod+F2 restarta
+bindsym $mod+F2 restart
 bindsym $mod+Shift+ctrl+l exec ~/scripts/lock.sh
 bindsym $mod+Shift+s --release exec ~/scripts/screenshot_mgr 
 
