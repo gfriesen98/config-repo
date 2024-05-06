@@ -7,6 +7,7 @@ polybarscripts="$HOME/.config/polybar/scripts/*"
 
 # full path to current kitty theme
 # eventually figure out how to use this theme file for other programs
+# themes are from dexpota/kitty-themes, placed in $HOME/.config/kitty-themes
 kittytheme="$HOME/.config/kitty/kitty-themes/themes/Jellybeans.conf"
 
 # gather configs to git repo
