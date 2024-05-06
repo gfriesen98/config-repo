@@ -81,6 +81,8 @@ amdgpu multiple monitor + freesync support
 fixes issues when playing games on a high refresh rate
 monitor with a lower refresh rate other monitor
 
+add this to 20-amdgpu.conf, and reboot
+
 ```
 Section "OutputClass"
 	Identifier "AMD"
