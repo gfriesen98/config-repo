@@ -1,0 +1,6 @@
+bluetuith
+minecraft-technic-launcher
+paru
+paru-debug
+spotify
+zscroll-git

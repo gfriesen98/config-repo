@@ -1,0 +1,109 @@
+# DEFINITIONS
+set $term kitty
+set $browser firefox
+
+gaps inner 10
+gaps outer 10
+set $mod Mod4
+floating_modifier $mod
+bindsym $mod+q [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
+
+font pango:Noto Sans Mono, Noto SansMono CJK JP, Noto Color Emoji, Symbols Nerd Font 10.6
+
+# STARTUP
+for_window [class="^.*"] border pixel 1
+
+exec --no-startup-id ~/.screenlayout/desktop.sh
+exec --no-startup-id picom -b
+exec_always --no-startup-id ~/.config/polybar/launch.sh &
+
+
+#exec --no-startup-id ~/.fehbg
+#exec_always --no-startup-id xfce4-panel --disable-/wm-check
+#exec_always --no-startup-id redshift-gtk
+#exec_always --no-startup-id polkit-dumb-agent
+#exec_always --no-startup-id discord
+
+# WORKSPACES
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
+
+bindsym $mod+Shift+space move scratchpad ; scratchpad show
+bindsym $mod+BackSpace scratchpad show
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left 30
+bindsym $mod+Shift+j move down 30
+bindsym $mod+Shift+k move up 30
+bindsym $mod+Shift+l move right 30
+
+bindsym $mod+Shift+b gaps inner current set 0; gaps outer current set 0
+bindsym $mod+b gaps inner current set 10; gaps outer current set 10
+
+bindsym $mod+Shift+y resize shrink width 20px or 1ppt
+bindsym $mod+Shift+o resize grow width 20px or 1ppt
+bindsym $mod+Shift+i resize shrink height 20px or 1ppt
+bindsym $mod+Shift+u resize grow height 20px or 1ppt
+
+# KEY BINDINGS
+bindsym $mod+Shift+c reload
+bindsym $mod+Return exec $term		
+bindsym $mod+Shift+Return exec --no-startup-id $term --class=floating_term
+for_window [class="floating_term"] floating enable
+
+bindsym $mod+apostrophe split horizontal ;; exec $term
+bindsym $mod+slash split vertical ;; exec $term
+
+bindsym $mod+f fullscreen toggle
+bindsym $mod+space floating toggle
+#bindsym $mod+space focus mode_toggle
+
+#bindsym $mod+d exec dmenu_run -i -nb "#C0C0C0" -nf "#000" -sf "#fff" -sb "#000DA6"
+bindsym $mod+d exec dmenu_run
+bindsym $mod+r exec pcmanfm
+bindsym $mod+Shift+w exec firefox
+bindsym $mod+Shift+s --release exec ~/scripts/screenshot_mgr 
+
+#bindsym $mod+plus exec amixer -D set Master 2%+
+#bindsym $mod+minus exec amixer -D set Master 2%-
+#bindsym $mod+Shift+plus exec inc_backlight
+#bindsym $mod+Shift+minus exec dec_backlight
+bindsym $mod+F2 restart	
+
+# Assign apps to workspaces
+#for_window [class="Spotify"] move to workspace $ws9
+#for_window [class="discord"] move to workspace $ws10
