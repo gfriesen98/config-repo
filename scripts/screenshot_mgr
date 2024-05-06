@@ -1,6 +1,6 @@
 #!/bin/bash
 
-path="/home/gort/images/screenshots/$(date +%Y)/$(date +%B)"
+path="$HOME/images/screenshots/$(date +%Y)/$(date +%B)"
 filename=$(date +"%Y-%m-%d-%H:%M").png
 
 
