@@ -24,3 +24,5 @@ im using:
 - wm:           i3wm
 - compositor:   picom
 - status bar:   polybar
+
+![uwufetch](https://github.com/gfriesen98/config-repo/blob/main/.images/uwufetch.png?raw=true)
