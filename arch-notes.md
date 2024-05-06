@@ -42,6 +42,7 @@ after installing arch using archinstall
 
 # GUI (if not using archinstall desktop variant)
 
+
 setting up xorg x11 for graphical environments
 
 1. check which video driver to install:
@@ -50,12 +51,8 @@ setting up xorg x11 for graphical environments
 2. install necessary xorg packages and video related stuffs
 	- xorg: x11 main package
 	- xorg-xinit: configuration to launch wm/de's without a gui logon manager
-	- picom: compositor for x11, for transparency/animations/vsync/etc
-	- termite: terminal emulator, can be any terminal emulator but its required
 	- i3-wm: tiling window manager
-	- feh: wallpaper setter
-	- maim: screenshot utility
-	- `sudo pacman -S [videodriver] xorg xorg-xinit picom termite i3-wm feh maim`
+	- `sudo pacman -S xf86-video-amdgpu xorg xorg-xinit i3-wm`
 3. copy default X11 .xinitrc config to $HOME
 	- `cp /etc/X11/xinit/xinitrc /home/$USERNAME/.xinitrc`
 	- open with `nvim .xinitrc`
@@ -70,9 +67,9 @@ setting up xorg x11 for graphical environments
 4. reboot
 5. login as your user, run `startx`
 
-# post-post install notes
+# fairly important post-post install notes
 
-## amdgpu X configs
+## X configs
 
 ### /etc/X11/xorg.conf.d/20-amdgpu.conf
 
