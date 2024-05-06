@@ -12,16 +12,16 @@
 
 after installing arch using archinstall
 
-install from pkglist.txt:
+- install from pkglist.txt:
     - `pacman -S --needed - < pkglist.txt`
     - for aurpkglist.txt, install individually with `paru`
 
-install `paru` (aur helper)
+- install `paru` (aur helper):
 	- `git clone https://aur.archlinx.org/paru.git`
 	- `cd paru && makepkg -si`
 		- on vm's with 4gb/lower ram, it sometimes struggles to compile
 
-Older notes:
+##### minimal install notes:
 
 1. add packages (stuff i want for headless play)
 	- `sudo pacman -S neovim openssh git`
