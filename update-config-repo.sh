@@ -28,7 +28,7 @@ cp $polybarconfig/launch.sh ./polybar/launch.sh
 cp $polybarscripts ./polybar/scripts
 
 # git commit
-read commitmsg
+read -p "Commit Message: " commitmsg
 git add .
 git commit -m "$commitmsg"
 git push
