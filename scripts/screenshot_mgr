@@ -6,12 +6,12 @@ filename=$(date +"%Y-%m-%d-%H:%M").png
 
 
 if [[ -d $path ]]; then
-	maim -s $path/$filename || exit 1
+	maim -u -s $path/$filename || exit 1
 	cat $path/$filename | xclip -selection clipboard -t image/png
 	notify-send "screenshot taken" "$filename copied to clipboard!"
 else
 	mkdir -p $path
-	maim -s $path/$filename || exit 1
+	maim -u -s $path/$filename || exit 1
 	cat $path/$filename | xclip -selection clipboard -t image/png
 	notify-send "first screenshot of the month!" "$filename copied to clipboard!"
 fi
