@@ -34,14 +34,13 @@ after installing arch using archinstall
 		- `[myusername]   ALL=(ALL:ALL) ALL`
 4. set up sshd
 	- configure sshd config if configuring keypair auth in `/etc/ssh/sshd_config`
-5. run `sudo ystemctl enable --now sshd.service`
+5. run `sudo systemctl enable --now sshd.service`
 6. install `paru` (aur helper)
 	- `git clone https://aur.archlinx.org/paru.git`
 	- `cd paru && makepkg -si`
 		- on vm's with 4gb/lower ram, it sometimes struggles to compile (?)
 
-# GUI (if not using archinstall desktop variant)
-
+##### GUI (if not using archinstall desktop variant)
 
 setting up xorg x11 for graphical environments
 

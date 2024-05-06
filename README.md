@@ -6,7 +6,7 @@ these scripts are assuming [arch-notes](https://github.com/gfriesen98/config-rep
 1. installed using `archinstall`
 2. selected `Desktop` when selecting a Profile with archinstall
 3. selected `i3` when selecting a graphical environment
-4. followed [arch-notes](https://github.com/gfriesen98/config-repo/blob/main/arch-notes.md) to install things manually
+4. followed [arch-notes](https://github.com/gfriesen98/config-repo/blob/main/arch-notes.md#minimal-install-notes) to install things manually
 
 i dont think selecting a different graphics driver or greeter/displaymanager should make a difference (aside from some graphics drivers stuffs, read the wiki)
 
