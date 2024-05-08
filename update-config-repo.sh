@@ -3,7 +3,9 @@
 mybashrc="$HOME/.bashrc"
 scripts="$HOME/scripts"
 i3config="$HOME/.config/i3/config"
+rangerconfig="$HOME/.config/ranger/rc.conf"
 kittyconfig="$HOME/.config/kitty/kitty.conf"
+kittybell="$HOME/.config/kitty/bell-custom2.oga"
 polybarconfig="$HOME/.config/polybar"
 polybarscripts="$HOME/.config/polybar/scripts/*"
 
@@ -23,8 +25,10 @@ kittytheme="$HOME/.config/kitty/kitty-themes/themes/Jellybeans.conf"
 cp $scripts/* ./scripts 				# collection of scripts used with the system
 cp $mybashrc ./bash/.bashrc				# bashrc
 cp $i3config ./i3/config				# i3 config
+cp $rangerconfig ./ranger/rc.conf			# ranger config
 cp $kittyconfig ./kitty/kitty.conf			# kitty terminal config
 cp $kittytheme ./kitty/theme.conf			# kitty theme
+cp $kittybell ./kitty/bell-custom2.oga			# kitty terminal bell sound
 cp $polybarconfig/config.ini ./polybar/config.ini	# polybar bar config
 cp $polybarconfig/launch.sh ./polybar/launch.sh		# polybar launch script
 cp $polybarscripts ./polybar/scripts			# polybar extra scripts
