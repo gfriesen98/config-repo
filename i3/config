@@ -20,6 +20,7 @@ font pango:Noto Sans Mono, Noto SansMono CJK JP, Noto Color Emoji, Symbols Nerd 
 #####################################
 exec --no-startup-id ~/.screenlayout/desktop.sh
 exec --no-startup-id picom -b
+exec --no-startup-id ~/scripts/set-wallpaper.sh -s
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 #exec --no-startup-id ~/.fehbg
 #exec_always --no-startup-id redshift-gtk
