@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# i hate this script but its chill
+
 mybashrc="$HOME/.bashrc"
 scripts="$HOME/scripts"
 currwallpaper="$HOME/.screenlayout/wallpaper.png"

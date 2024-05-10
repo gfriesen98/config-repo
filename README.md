@@ -26,3 +26,4 @@ im using:
 - status bar:   polybar
 
 ![uwufetch](https://github.com/gfriesen98/config-repo/blob/main/.images/uwufetch.png?raw=true)
+![desktop](https://github.com/gfriesen98/config-repo/blob/main/.images/desktop.png?raw=true)
