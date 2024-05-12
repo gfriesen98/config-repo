@@ -1,11 +1,11 @@
 #!/bin/bash
 
+temppath="/tmp/screen.png"
 path="$HOME/images/screenshots/$(date +%Y)/$(date +%B)"
 filename=$(date +"%Y-%m-%d-%H:%M").png
 
-
-
 if [[ -d $path ]]; then
+	scrot -o $temppath
 	maim -u -s $path/$filename || exit 1
 	cat $path/$filename | xclip -selection clipboard -t image/png
 	notify-send "screenshot taken" "$filename copied to clipboard!"
