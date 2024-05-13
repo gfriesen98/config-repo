@@ -1,3 +1,12 @@
+#  ██  ████                              ████ ██        
+# ░░  █░░░ █                            ░██░ ░░   █████ 
+#  ██░    ░█  █████   ██████  ███████  ██████ ██ ██░░░██
+# ░██   ███  ██░░░██ ██░░░░██░░██░░░██░░░██░ ░██░██  ░██
+# ░██  ░░░ █░██  ░░ ░██   ░██ ░██  ░██  ░██  ░██░░██████
+# ░██ █   ░█░██   ██░██   ░██ ░██  ░██  ░██  ░██ ░░░░░██
+# ░██░ ████ ░░█████ ░░██████  ███  ░██  ░██  ░██  █████ 
+# ░░  ░░░░   ░░░░░   ░░░░░░  ░░░   ░░   ░░   ░░  ░░░░░  
+
 ######################################
 #        Global Definitions          #
 ######################################
@@ -105,6 +114,8 @@ bindsym $mod+Shift+Return exec --no-startup-id $term --class=floating_term
 bindsym $mod+Shift+w exec firefox
 bindsym $mod+d exec dmenu_run
 bindsym $mod+r exec pcmanfm
+
+bindsym $mod+control+n exec ~/scripts/dmenu/dmenu-list-notes.sh
 
 # Assign apps to workspaces
 #for_window [class="Spotify"] move to workspace $ws9
