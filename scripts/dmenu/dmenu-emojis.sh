@@ -11,5 +11,5 @@ if [ -n "$1" ]; then
 	xdotool type "$chosen"
 else
 	echo "$chosen" | tr -d '\n' | xclip -selection clipboard
-	notify-send "'$chosen' copied to clipboard." &
+	notify-send "'$chosen' copied to clipboard." --expire-time 2000 &
 fi

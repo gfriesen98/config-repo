@@ -1,0 +1,70 @@
+[global]
+
+follow = mouse
+width = 300
+height = 300
+origin = top-right
+offset = 10x50
+scale = 0
+notification_limit = 20
+
+separator_height = 2
+padding = 8
+horizontal_padding = 8
+text_icon_padding = 0
+frame_width = 3
+frame_color = "#e2c1fa"
+gap_size = 0
+separator_color = frame
+
+sort = yes
+
+font = "Noto Sans Mono 10"
+line_heigh = 0
+markup = full
+format = "<b>%a</b>\n<i>%s</i>\n%b"
+alignment = left
+verical_alignment = center
+ellipsize = middle
+ignore_newline = no
+
+icon_position = left
+min_icon_size = 32
+max_icon_size = 128
+icon_path = /usr/share/icons/Adwaita/16x16/emblems/:/usr/share/icons/Adwaita/16x16/places/
+
+history_length = 20
+
+dmenu = /usr/bin/dmenu -p dunst:
+browser = /usr/bin/firefox
+always_run_script = true
+title = Dunst
+class = Dunst
+
+corner_radius = 20
+corners = all
+
+ignore_dbusclose = false
+force_xwayland = false
+force_xinerama = false
+
+mouse_left_click = close_current
+mouse_middle_click = do_action, close_current
+mouse_right_click = close_all
+
+[urgency_low]
+background = "#111111"
+foreground = "#dedede"
+timeout 5
+
+[urgency_normal]
+background = "#111111"
+foreground = "#dedede"
+timeout 5
+
+[urgency_critical]
+background = "#111111"
+foreground = "#309690"
+frame_color = "#e27474"
+timeout = 0
+override_pause_level = 60

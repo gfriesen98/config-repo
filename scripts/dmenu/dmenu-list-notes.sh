@@ -1,10 +1,13 @@
 #!/bin/bash
 source $HOME/.config/gortscripts/gortrc
 
-if [ -z "$NOTES_PATH" ]; then
-	echo \$NOTES_PATH is not found. Is \$HOME/.config/gortscripts/gortrc sourced in .bashrc?
+chosen=$(ls $NOTES_PATH | dmenu -p "Open which notes?" -i -l 10)
+
+if [ -z "$chosen" ]; then
+	echo no file selected
+	notify-send "No file selected" --expire-time 800 --app-name "Notes"
 	exit
 fi
 
-chosen=$(ls $NOTES_PATH | dmenu -p "Open which notes?" -i -l 10)
+notify-send "Opening $chosen..." --app-name "Notes"
 bash $SCRIPTS_PATH/mdtopdf-zathura.sh $NOTES_PATH/$chosen &
