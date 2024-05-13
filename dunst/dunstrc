@@ -20,7 +20,7 @@ separator_color = frame
 sort = yes
 
 font = "Noto Sans Mono 10"
-line_heigh = 0
+line_height = 0
 markup = full
 format = "<b>%a</b>\n<i>%s</i>\n%b"
 alignment = left
@@ -32,6 +32,8 @@ icon_position = left
 min_icon_size = 32
 max_icon_size = 128
 icon_path = /usr/share/icons/Adwaita/16x16/emblems/:/usr/share/icons/Adwaita/16x16/places/
+icon_corner_radius = 5
+icon_corners = all
 
 history_length = 20
 
@@ -41,7 +43,7 @@ always_run_script = true
 title = Dunst
 class = Dunst
 
-corner_radius = 20
+corner_radius = 10
 corners = all
 
 ignore_dbusclose = false
