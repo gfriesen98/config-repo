@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # i hate this script but its chill
-
+gortscriptsrc="$HOME/.config/gortscripts/gortrc"
+pandoctemplate=/usr/share/haskell-pandoc/data/templates/drake-material.tex
 mybashrc="$HOME/.bashrc"
 bleshrc="$HOME/.blerc"
 scripts="$HOME/scripts"
@@ -15,6 +16,7 @@ kittybell="$HOME/.config/kitty/bell-custom2.oga"
 polybarconfig="$HOME/.config/polybar"
 polybarscripts="$HOME/.config/polybar/scripts/*"
 nvimconfig="$HOME/.config/nvim/*"
+zathuraconfig="$HOME/.config/zathura/zathurarc"
 
 # full path to current kitty theme
 # eventually figure out how to use this theme file for other programs
@@ -22,6 +24,8 @@ nvimconfig="$HOME/.config/nvim/*"
 kittytheme="$HOME/.config/kitty/kitty-themes/themes/Jellybeans.conf"
 
 # ensure folders get created
+[ ! -d "./pandoc" ] && mkdir pandoc
+[ ! -d "./gortscripts" ] && mkdir gortscripts
 [ ! -d "./scripts" ] && mkdir scripts
 [ ! -d "./bash" ] && mkdir bash
 [ ! -d "./i3" ] && mkdir i3
@@ -30,9 +34,12 @@ kittytheme="$HOME/.config/kitty/kitty-themes/themes/Jellybeans.conf"
 [ ! -d "./polybar/scripts" ] && mkdir -p ./polybar/scripts
 [ ! -d "./.screenlayout" ] && mkdir .screenlayout
 [ ! -d "./nvim" ] && mkdir nvim
+[ ! -d "./zathura" ] && mkdir zathura
 
 # gather configs to git repo
 # copy files. copying individually to help keep repo clean of other extra shit
+cp $gortscriptsrc ./gortscripts				# config file to help with various scripts
+cp $pandoctemplate ./pandoc				# pandoc template theme, edited to use current noto fonts
 cp -r $scripts/* ./scripts 				# collection of scripts used with the system
 cp $currwallpaper ./.screenlayout/wallpaper.png		# current wallpaper
 cp $screenlayout ./.screenlayout/desktop.sh		# xrandr monitor layout
@@ -48,6 +55,7 @@ cp $polybarconfig/config.ini ./polybar/config.ini	# polybar bar config
 cp $polybarconfig/launch.sh ./polybar/launch.sh		# polybar launch script
 cp $polybarscripts ./polybar/scripts			# polybar extra scripts
 cp -r $nvimconfig ./nvim					# nvim kickstart config
+cp $zathuraconfig ./zathura
 
 # git commit
 read -p "Commit Message: " commitmsg

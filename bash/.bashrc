@@ -7,7 +7,10 @@
 [[ $- == *i* ]] && source $HOME/ble.sh/out/ble.sh --noattach
 
 source ~/scripts/git-prompt.sh
+source $HOME/.config/gortscripts/gortrc
+export TERMINAL=kitty
 export BROWSER=/usr/bin/firefox
+export EDITOR=nvim
 
 # Aliaseses
 alias ls='ls --color=auto'

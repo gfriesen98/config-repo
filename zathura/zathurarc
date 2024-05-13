@@ -1,0 +1,21 @@
+# clipboard support
+set selection-clipboard clipboard
+
+# start in inverse colour mode
+#set recolor "true"
+
+# on open fit settings
+set adjust-open "width"
+set scroll-page-aware "true"
+set smooth-scroll "true"
+#set scroll-full-overlap 0.01
+#set scroll-step 100
+
+#set zoom-min 10
+#set guioptions ""
+
+set render-loading "false"
+#set scroll-step 50
+unmap f
+map f toggle_fullscreen
+map [fullscreen] f toggle_fullscreen

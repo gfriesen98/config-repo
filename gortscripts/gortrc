@@ -1,0 +1,4 @@
+GORTSCRIPTS_CONFIG_PATH=$HOME/.config/gortscripts
+SCRIPTS_PATH=$HOME/scripts
+CONFIG_PATH=$HOME/.config
+NOTES_PATH=$HOME/notes
