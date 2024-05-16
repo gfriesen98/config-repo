@@ -1,13 +1,11 @@
 #!/bin/bash
 
-source $HOME/.config/gortscripts/gortrc
-
 lockfile="/tmp/dmenu_ytdlp.lock"
 urlsFile="/tmp/ytdlp_urls.txt"
 waitingUrlsFile="/tmp/waiting_ytdlp_urls.txt"
 ytdlpIcon="/tmp/yt-dlp-thumbnail.jpg"
 pattern="(http:|https:)?\/\/(www\.)?(youtube.com|youtu.be)\/(watch)?(\?v=)?(\S+)?"
-ytdlpFormat="bestvideo+bestaudio[ext=m4a]"
+ytdlpFormat="bestvideo[ext=mp4]+bestaudio[ext=m4a]"
 dlFolder="$HOME/downloads/"
 urls=()
 waitingUrls=()
@@ -16,12 +14,10 @@ waitingUrls=()
 dmenuInput=$(dmenu -p "input yt url " < /dev/null)
 [ -z "$dmenuInput" ] && exit
 
-downloadFormat=$(echo -e "mp4\nmp3" | dmenu -p "download format")
-echo $downloadFormat
-
+notify-send -t 3000 "Starting yt-dlp" --app-name "yt-dlp"
 if [[ -e $lockfile ]]; then
 	title=$(yt-dlp --get-title "$dmenuInput")
-	notify-send -t 2000 "Adding $title to queue..."
+	notify-send -t 2000 "Adding $title to queue..." --app-name "yt-dlp"
 	echo "$dmenuInput" >> $waitingUrlsFile
 	exit 1
 else
@@ -32,14 +28,14 @@ if [[ -f $urlsFile ]]; then
 	mapfile -t urls < $urlsFile
 fi
 
-while [[ ${#urls[@]} -gt 0 ]];
+while [[ ${#urls[@]} -gt 0 ]]; do
 	for url in "${urls[@]}"; do
 		touch $lockfile
 		yt-dlp --skip-download --write-thumbnail --convert-thumbnails jpg --output "/tmp/yt-dlp-thumbnail" $url
 		name=$(yt-dlp --get-title "$url")
-		notify-send -t 2000 -i $ytdlpIcon "Downloading" "$name"
+		notify-send -t 3000 -i $ytdlpIcon "Downloading $name..." --app-name "yt-dlp"
 		yt-dlp -w --no-mtime -f $ytdlpFormat -o "$dlFolder%(title)s.%(ext)s" -i "$url"
-		notify-send -t 2000 -i $ytdlpIcon "Download Complete" "$name"
+		notify-send -t 3000 -i $ytdlpIcon "Finished Downloading $name!" --app-name "yt-dlp"
 	done
 
 	> $urlsFile

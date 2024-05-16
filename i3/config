@@ -95,7 +95,6 @@ bindsym $mod+Shift+i resize shrink height 20px or 1ppt
 bindsym $mod+Shift+u resize grow height 20px or 1ppt
 bindsym $mod+f fullscreen toggle
 bindsym $mod+space floating toggle
-#bindsym $mod+space focus mode_toggle
 bindsym $mod+apostrophe split horizontal ;; exec $term
 bindsym $mod+slash split vertical ;; exec $term
 
@@ -112,8 +111,7 @@ bindsym $mod+Shift+w exec firefox
 bindsym $mod+d exec dmenu_run
 bindsym $mod+r exec pcmanfm
 
-bindsym $mod+control+n exec ~/scripts/dmenu/dmenu-list-notes.sh
-
-# Assign apps to workspaces
-#for_window [class="Spotify"] move to workspace $ws9
-#for_window [class="discord"] move to workspace $ws10
+# SCRIPT BINDS
+bindsym $mod+n exec ~/scripts/dmenu/dmenu-list-notes.sh
+bindsym $mod+Shift+n exec ~/scripts/dmenu/dmenu-new-note.sh
+bindsym $mod+ctrl+y exec ~/scripts/dmenu/dmenu-ytdlp.sh

@@ -1,3 +1,6 @@
+EDITOR=nvim
+TERMINAL=kitty
+PDF_VIEWER=zathura
 GORTSCRIPTS_CONFIG_PATH=$HOME/.config/gortscripts
 SCRIPTS_PATH=$HOME/scripts
 CONFIG_PATH=$HOME/.config
