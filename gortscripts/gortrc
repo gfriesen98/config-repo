@@ -1,5 +1,6 @@
 EDITOR=nvim
 TERMINAL=kitty
+BROWSER=/usr/bin/firefox
 PDF_VIEWER=zathura
 GORTSCRIPTS_CONFIG_PATH=$HOME/.config/gortscripts
 SCRIPTS_PATH=$HOME/scripts
