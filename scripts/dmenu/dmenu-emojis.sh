@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-chosen=$(cut -d ';' -f1 ./emoji-list | dmenu -i -l 10 | sed "s/ .*//")
+chosen=$(cat $GORTSCRIPTS_CONFIG_PATH/emojis | dmenu -p "Emojis")
 
 # Exit if none chosen.
 [ -z "$chosen" ] && exit
@@ -10,6 +10,7 @@ chosen=$(cut -d ';' -f1 ./emoji-list | dmenu -i -l 10 | sed "s/ .*//")
 if [ -n "$1" ]; then
 	xdotool type "$chosen"
 else
-	echo "$chosen" | tr -d '\n' | xclip -selection clipboard
-	notify-send "'$chosen' copied to clipboard." --expire-time 2000 &
+	emoji=$(echo "$chosen" | tr -d '\n' | awk -F ' ' '{print $1}')
+	echo "$emoji" | tr -d '\n' | xclip -selection clipboard
+	notify-send "'$emoji' copied to clipboard." --expire-time 3000 --app-name "Emoji Picker" &
 fi

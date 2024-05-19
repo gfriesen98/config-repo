@@ -2,6 +2,7 @@
 
 # i hate this script but its chill
 gortscriptsrc="$HOME/.config/gortscripts/gortrc"
+emojis="$HOME/.config/gortscripts/emojis"
 pandoctemplate=/usr/share/haskell-pandoc/data/templates/drake-material.tex
 mybashrc="$HOME/.bashrc"
 bleshrc="$HOME/.blerc"
@@ -41,6 +42,7 @@ kittytheme="$HOME/.config/kitty/kitty-themes/themes/Jellybeans.conf"
 # gather configs to git repo
 # copy files. copying individually to help keep repo clean of other extra shit
 cp $gortscriptsrc ./gortscripts				# config file to help with various scripts
+cp $emojis ./gortscripts				# emojis file
 cp $pandoctemplate ./pandoc				# pandoc template theme, edited to use current noto fonts
 cp -r $scripts/* ./scripts 				# collection of scripts used with the system
 cp $currwallpaper ./.screenlayout/wallpaper.png		# current wallpaper
