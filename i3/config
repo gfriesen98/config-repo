@@ -115,3 +115,4 @@ bindsym $mod+r exec pcmanfm
 bindsym $mod+n exec ~/scripts/dmenu/dmenu-list-notes.sh
 bindsym $mod+Shift+n exec ~/scripts/dmenu/dmenu-new-note.sh
 bindsym $mod+ctrl+y exec ~/scripts/dmenu/dmenu-ytdlp.sh
+bindsym $mod+Shift+e exec ~/scripts/dmenu/dmenu-emojis.sh

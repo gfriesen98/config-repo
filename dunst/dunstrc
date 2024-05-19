@@ -23,7 +23,7 @@ font = "Noto Sans Mono 10"
 line_height = 0
 markup = full
 format = "<b>%a</b>\n<i>%s</i>\n%b"
-alignment = left
+alignment = center
 verical_alignment = center
 ellipsize = middle
 ignore_newline = no
@@ -31,9 +31,10 @@ ignore_newline = no
 icon_position = left
 min_icon_size = 32
 max_icon_size = 128
-icon_path = /usr/share/icons/Adwaita/16x16/emblems/:/usr/share/icons/Adwaita/16x16/places/
+
 icon_corner_radius = 5
 icon_corners = all
+#icon_path = /usr/share/icons/Adwaita/16x16/emblems/:/usr/share/icons/Adwaita/16x16/places/:/usr/share/icons/Adwaita/cursors/:/usr/share/icons/Adwaita/symbolic/status/
 
 history_length = 20
 
@@ -57,12 +58,12 @@ mouse_right_click = close_all
 [urgency_low]
 background = "#111111"
 foreground = "#dedede"
-timeout 5
+timeout = 5
 
 [urgency_normal]
 background = "#111111"
 foreground = "#dedede"
-timeout 5
+timeout = 5
 
 [urgency_critical]
 background = "#111111"

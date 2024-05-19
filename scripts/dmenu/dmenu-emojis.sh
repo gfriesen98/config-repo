@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+source $HOME/.config/gortscripts/gortrc
 
 chosen=$(cat $GORTSCRIPTS_CONFIG_PATH/emojis | dmenu -p "Emojis")
 
