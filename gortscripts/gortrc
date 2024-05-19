@@ -1,8 +1,10 @@
-EDITOR=nvim
-TERMINAL=kitty
-BROWSER=/usr/bin/firefox
-PDF_VIEWER=zathura
-GORTSCRIPTS_CONFIG_PATH=$HOME/.config/gortscripts
-SCRIPTS_PATH=$HOME/scripts
-CONFIG_PATH=$HOME/.config
-NOTES_PATH=$HOME/notes
+export EDITOR=nvim
+export TERMINAL=kitty
+export BROWSER=/usr/bin/firefox
+export PDF_VIEWER=zathura
+export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
+
+export GORTSCRIPTS_CONFIG_PATH=$HOME/.config/gortscripts
+export SCRIPTS_PATH=$HOME/scripts
+export CONFIG_PATH=$HOME/.config
+export NOTES_PATH=$HOME/notes
