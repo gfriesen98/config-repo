@@ -1,6 +1,10 @@
 bluetuith
+duckstation-git
+jdownloader2
 minecraft-technic-launcher
 paru
 paru-debug
+pcsx2
+rpcs3-bin
 spotify
 zscroll-git
