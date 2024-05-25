@@ -1,0 +1,10 @@
+#!/bin/sh
+
+while read file; do
+	case "$1" in
+	"w")
+		sh $HOME/scripts/set-wallpaper.sh -i "$file"
+		notify-send "Wallpaper Set!" "🖼️ $(basename "$file")" --app-name "sxiv"
+		;;
+	esac
+done
