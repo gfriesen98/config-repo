@@ -20,6 +20,7 @@ nvimconfig="$HOME/.config/nvim/*"
 zathuraconfig="$HOME/.config/zathura/zathurarc"
 dunstconfig="$HOME/.config/dunst/dunstrc"
 sxivconfig="$HOME/.config/sxiv/exec/key-handler"
+xorgxresources="$HOME/.Xresources"
 
 # full path to current kitty theme
 # eventually figure out how to use this theme file for other programs
@@ -40,6 +41,7 @@ kittytheme="$HOME/.config/kitty/kitty-themes/themes/Jellybeans.conf"
 [ ! -d "./zathura" ] && mkdir zathura
 [ ! -d "./dunst" ] && mkdir dunst
 [ ! -d "./sxiv" ] && mkdir -p "./sxiv/exec"
+[ ! -d "./Xorg" ] && mkdir Xorg
 
 # gather configs to git repo
 # copy files. copying individually to help keep repo clean of other extra shit
@@ -64,6 +66,7 @@ cp -r $nvimconfig ./nvim				# nvim kickstart config
 cp $zathuraconfig ./zathura				# zathura pdf config
 cp $dunstconfig ./dunst					# dunst notificaton config
 cp $sxivconfig ./sxiv					# sxiv custom C-x commands
+cp $xorgxresources ./Xorg				# .Xresources
 
 # git commit
 read -p "Commit Message: " commitmsg
