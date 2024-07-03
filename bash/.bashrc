@@ -19,3 +19,6 @@ fc() { du -a $HOME/.config/* | awk '{print $2}' | fzf | xargs -r $EDITOR; }
 PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 " (%s)")'; PS1='\[\e[38;5;153m\]\u\[\e[0m\]~\[\e[38;5;215m\]\@\[\e[38;5;36m\]${PS1_CMD1}\[\e[0m\] \n\[\e[90m\]\w\[\e[0m\] > '
 
 [[ ${BLE_VERSION-} ]] && ble-attach
+
+# Created by `pipx` on 2024-06-28 08:39:56
+export PATH="$PATH:/home/gort/.local/bin"

@@ -116,3 +116,8 @@ bindsym $mod+n exec ~/scripts/dmenu/dmenu-list-notes.sh
 bindsym $mod+Shift+n exec ~/scripts/dmenu/dmenu-new-note.sh
 bindsym $mod+ctrl+y exec ~/scripts/dmenu/dmenu-ytdlp.sh
 bindsym $mod+Shift+e exec ~/scripts/dmenu/dmenu-emojis.sh
+bindsym $mod+Shift+a exec ~/scripts/dmenu/dmenu-archwiki.sh
+
+# Assign apps to workspaces
+for_window [class="Steam"] move to workspace $ws9
+for_window [class="discord"] move to workspace $ws2
