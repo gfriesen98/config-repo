@@ -37,3 +37,4 @@ themes are from [dexpota/kitty-themes](https://github.com/dexpota/kitty-themes)
 # todos
 
 * create script to apply colours from the kitty theme.conf to everything like polybar
+* unfuck script to stop copying fucking icons
