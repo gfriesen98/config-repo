@@ -8,7 +8,7 @@ fi
 
 if [[ -z $(which ffmpeg) ]]; then
 	echo "ffmpeg isnt installed!!"
-	echo "pls install 'ffmpeg' with your package manager"
+	echo "pls install 'ffmpeg'"
 	exit
 fi
 

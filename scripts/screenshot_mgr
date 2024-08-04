@@ -1,21 +1,14 @@
 #!/bin/bash
 
-temppath="/tmp/screen.png"
+# Uses 'maim' to take a mouse selection screenshot
+# and opens it for drawing with 'scedit'
+#
+# Saves to a date organized folder structure and to
+# clipboard on exit
+
 path="$HOME/images/screenshots/$(date +%Y)/$(date +%B)"
 filename=$(date +"%Y-%m-%d-%H:%M").png
 
-if [[ -d $path ]]; then
-	scrot -o $temppath
-	maim -u -s $path/$filename || exit 1
-	cat $path/$filename | xclip -selection clipboard -t image/png
-	notify-send "screenshot taken" \
-		"$filename copied to clipboard!" \
-		--app-name "📸 screenshot taken"
-else
-	mkdir -p $path
-	maim -u -s $path/$filename || exit 1
-	cat $path/$filename | xclip -selection clipboard -t image/png
-	notify-send "first screenshot of the month!" \
-		"$filename copied to clipboard!" \
-		--app-name "📸 screenshot taken"
-fi
+[[ ! -d $path ]] && mkdir -p $path
+
+maim -u -s | scedit -o $path/$filename -s

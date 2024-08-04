@@ -13,6 +13,7 @@ source $HOME/.config/gortscripts/gortrc #common paths and variables
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ssh='kitty +kitten ssh'	#kitty ssh fix
+alias shh='ssh'
 fs() { du -a $HOME/scripts/* | awk '{print $2}' | fzf | xargs -r $EDITOR; }
 fc() { du -a $HOME/.config/* | awk '{print $2}' | fzf | xargs -r $EDITOR; }
 

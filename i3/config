@@ -100,7 +100,7 @@ bindsym $mod+slash split vertical ;; exec $term
 
 # I3 BINDS
 bindsym $mod+Shift+f2 reload
-bindsym $mod+F2 restart
+#bindsym $mod+F2 exec ~/scripts/restart.sh
 bindsym $mod+Shift+ctrl+l exec ~/scripts/lock.sh
 bindsym $mod+Shift+s --release exec ~/scripts/screenshot_mgr 
 
@@ -121,3 +121,4 @@ bindsym $mod+Shift+a exec ~/scripts/dmenu/dmenu-archwiki.sh
 # Assign apps to workspaces
 for_window [class="Steam"] move to workspace $ws9
 for_window [class="discord"] move to workspace $ws2
+for_window [class="scedit"] floating enable
