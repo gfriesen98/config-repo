@@ -72,8 +72,8 @@ cp $zathuraconfig ./zathura				# zathura pdf config
 cp $dunstconfig ./dunst					# dunst notificaton config
 cp $sxivconfig ./sxiv					# sxiv custom C-x commands
 cp $xorgxresources ./Xorg				# .Xresources
-cp -r $gtkthemedir ./themes
-cp -r $iconsets ./icons
+#cp -r $gtkthemedir ./themes
+#cp -r $iconsets ./icons
 
 # git commit
 read -p "Commit Message: " commitmsg
