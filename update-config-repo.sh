@@ -5,7 +5,6 @@ gortscriptsrc="$HOME/.config/gortscripts/gortrc"
 emojis="$HOME/.config/gortscripts/emojis"
 pandoctemplate=/usr/share/haskell-pandoc/data/templates/drake-material.tex
 mybashrc="$HOME/.bashrc"
-bleshrc="$HOME/.blerc"
 scripts="$HOME/scripts"
 currwallpaper="$HOME/.screenlayout/wallpaper.png"
 screenlayout="$HOME/.screenlayout/desktop.sh"
@@ -57,7 +56,6 @@ cp -r $scripts/* ./scripts 				# collection of scripts used with the system
 cp $currwallpaper ./.screenlayout/wallpaper.png		# current wallpaper
 cp $screenlayout ./.screenlayout/desktop.sh		# xrandr monitor layout
 cp $mybashrc ./bash/.bashrc				# bashrc
-cp $bleshrc ./bash/.blerc				# ble.sh config file (bash auto complete)
 cp $i3config ./i3/config				# i3 config
 cp $picomconfig ./picom/picom.conf			# picom config
 cp $rangerconfig ./ranger/rc.conf			# ranger config

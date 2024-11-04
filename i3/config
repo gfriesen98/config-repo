@@ -25,13 +25,14 @@ for_window [class="floating_term"] floating enable
 # fontconfig
 font pango:Noto Sans Mono, Noto SansMono CJK JP, Noto Color Emoji, Symbols Nerd Font 10.6
 
-
 # STARTUP
 exec --no-startup-id ~/.screenlayout/desktop.sh
 exec --no-startup-id picom -b
 exec --no-startup-id /usr/bin/dunst &
 exec --no-startup-id ~/scripts/set-wallpaper.sh -s
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
+exec --no-startup-id lpadmin -p hp -E -v "ipp://192.168.100.111" -m everywhere -d
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 #####################################
 #            WORKSPACES             #
