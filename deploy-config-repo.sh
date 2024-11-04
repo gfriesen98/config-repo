@@ -61,6 +61,9 @@ cp "./polybar/launch.sh" "~/.config/polybar/launch.sh" && cp "./polybar/config.i
 [[ ! -d "~/.config/nvim" ]] && mkdir -p "~/.config/nvim/lua"
 cp "./nvim/*" "~/.config/nvim" && echo "Copied neovim configs"
 
+[[ ! -d "~/suckless/dmenu" ]] && mkdir -p "~/suckless/dmenu"
+cp "./suckless/*" "~/suckless/dmenu" && echo "Copied suckless (dmenu). Need to copy dmenu_run to /usr/local/bin/dmenu_run!!"
+
 [[ ~ -d "~/.config/sxiv/exec/key-handler" ]] && mkdir -p "~/.config/sxiv/exec/key-handler"
 cp "./sxiv/*" "~/.config/sxiv/exec/key-handler" && echo "Copied sxiv key handler"
 
