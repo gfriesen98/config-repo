@@ -31,17 +31,17 @@ iconsets="$HOME/.icons/*"
 kittytheme="$HOME/.config/kitty/kitty-themes/themes/Jellybeans.conf"
 
 # copy stuff to their new proper homes
-[[ ! -d "$(dirname $gortscriptsrc)" ]] && mkdir -p $(dirname $gortscriptsrc)
+[[ ! -d "~/.config/gortscripts" ]] && mkdir -p $(dirname $gortscriptsrc)
 cp "./gortscripts/gortrc" "$gortscriptsrc" && cp "./gortscripts/emojis" "$emojis" && echo "Copied ./gortscripts"
 
 [[ ! -d "$(dirname $pandoctemplate)" ]] && mkdir -p $(dirname $pandoctemplate)
 cp "./pandoc/drake-material.tex" "$pandoctemplate" && echo "Copied pandoc styles"
 
-[[ ! -d "$(dirname $scripts)" ]] && mkdir -p "$(dirname $scripts)/dmenu"
-cp "./scripts/*" "$scripts" && echo "Copied scripts"
+[[ ! -d "~/scripts" ]] && mkdir -p "~scripts//dmenu"
+cp -r "./scripts" "$scripts" && echo "Copied scripts"
 
 [[ ! -d "$(dirname $currwallpaper)" ]] && mkdir -p $(dirname $currwallpaper)
-cp "./.screenlayout/*" "~/.screenlayout/" && echo "Copied .screenlayout"
+cp -r "./.screenlayout" "~/.screenlayout/" && echo "Copied .screenlayout"
 
 [[ ! -d "$(dirname $i3config)" ]] && mkdir -p $(dirname $i3config)
 cp "./i3/config" "~/.config/i3" && echo "Copied i3 config"
@@ -62,16 +62,16 @@ cp "./polybar/launch.sh" "~/.config/polybar/launch.sh" && cp "./polybar/config.i
 cp "./nvim/*" "~/.config/nvim" && echo "Copied neovim configs"
 
 [[ ! -d "~/suckless/dmenu" ]] && mkdir -p "~/suckless/dmenu"
-cp "./suckless/*" "~/suckless/dmenu" && echo "Copied suckless (dmenu). Need to copy dmenu_run to /usr/local/bin/dmenu_run!!"
+cp -r "./suckless" "~/suckless/dmenu" && echo "Copied suckless (dmenu). Need to copy dmenu_run to /usr/local/bin/dmenu_run!!"
 
-[[ ~ -d "~/.config/sxiv/exec/key-handler" ]] && mkdir -p "~/.config/sxiv/exec/key-handler"
-cp "./sxiv/*" "~/.config/sxiv/exec/key-handler" && echo "Copied sxiv key handler"
+[[ ! -d "~/.config/sxiv/exec/key-handler" ]] && mkdir -p "~/.config/sxiv/exec/key-handler"
+cp "./sxiv/key-handler" "~/.config/sxiv/exec/key-handler" && echo "Copied sxiv key handler"
 
 [[ ! -d "~/.themes" ]] && mkdir -p "~/.themes"
-cp "./themes/*" "~/.themes" && echo "Copied themes. Themes need to be unzipped first!!"
+cp -r "./themes" "~/.themes" && echo "Copied themes. Themes need to be unzipped first!!"
 
 [[ ! -d "~/.icons" ]] && mkdir -p "~/.icons"
-cp "./icons/*" && echo "Copied icons. Icons need to be unzipped first!!"
+cp -r "./icons" "~/.icons" && echo "Copied icons. Icons need to be unzipped first!!"
 
 cp "./bash/.bashrc" "~/.bashrc" && cp "./bash/.bash_profile" "~/.bash_profile" && echo "Copied .bashrc and profile"
 

@@ -1,0 +1,125 @@
+#
+#  ██  ████                              ████ ██        
+# ░░  █░░░ █                            ░██░ ░░   █████ 
+#  ██░    ░█  █████   ██████  ███████  ██████ ██ ██░░░██
+# ░██   ███  ██░░░██ ██░░░░██░░██░░░██░░░██░ ░██░██  ░██
+# ░██  ░░░ █░██  ░░ ░██   ░██ ░██  ░██  ░██  ░██░░██████
+# ░██ █   ░█░██   ██░██   ░██ ░██  ░██  ░██  ░██ ░░░░░██
+# ░██░ ████ ░░█████ ░░██████  ███  ░██  ░██  ░██  █████ 
+# ░░  ░░░░   ░░░░░   ░░░░░░  ░░░   ░░   ░░   ░░  ░░░░░  
+#
+#
+
+
+# Global Definitions
+set $term kitty
+set $browser firefox
+set $mod Mod4
+floating_modifier $mod
+
+gaps inner 10
+gaps outer 10
+for_window [class="^.*"] border pixel 1
+for_window [class="floating_term"] floating enable
+
+# fontconfig
+font pango:Noto Sans Mono, Noto SansMono CJK JP, Noto Color Emoji, Symbols Nerd Font 10.6
+
+# STARTUP
+exec --no-startup-id ~/.screenlayout/desktop.sh
+exec --no-startup-id picom -b
+exec --no-startup-id /usr/bin/dunst &
+exec --no-startup-id ~/scripts/set-wallpaper.sh -s
+exec_always --no-startup-id ~/.config/polybar/launch.sh &
+exec --no-startup-id lpadmin -p hp -E -v "ipp://192.168.100.111" -m everywhere -d
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+#####################################
+#            WORKSPACES             #
+#####################################
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+#####################################
+#             KEYBINDS              #
+#####################################
+
+# WORKSPACES
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
+
+# SCRATCHPAD
+bindsym $mod+Shift+space move scratchpad ; scratchpad show
+bindsym $mod+BackSpace scratchpad show
+
+# FOCUS/WINDOW MANAGEMNT
+bindsym $mod+q [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Shift+h move left 30
+bindsym $mod+Shift+j move down 30
+bindsym $mod+Shift+k move up 30
+bindsym $mod+Shift+l move right 30
+bindsym $mod+Shift+b gaps inner current set 0; gaps outer current set 0
+bindsym $mod+b gaps inner current set 10; gaps outer current set 10
+bindsym $mod+Shift+y resize shrink width 20px or 1ppt
+bindsym $mod+Shift+o resize grow width 20px or 1ppt
+bindsym $mod+Shift+i resize shrink height 20px or 1ppt
+bindsym $mod+Shift+u resize grow height 20px or 1ppt
+bindsym $mod+f fullscreen toggle
+bindsym $mod+space floating toggle
+bindsym $mod+apostrophe split horizontal ;; exec $term
+bindsym $mod+slash split vertical ;; exec $term
+
+# I3 BINDS
+bindsym $mod+Shift+f2 reload
+#bindsym $mod+F2 exec ~/scripts/restart.sh
+bindsym $mod+Shift+ctrl+l exec ~/scripts/lock.sh
+bindsym $mod+Shift+s --release exec ~/scripts/screenshot_mgr 
+
+# APPLICATION BINDS
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec --no-startup-id $term --class=floating_term
+bindsym $mod+Shift+w exec firefox
+bindsym $mod+d exec dmenu_run
+bindsym $mod+r exec pcmanfm
+
+# SCRIPT BINDS
+bindsym $mod+n exec ~/scripts/dmenu/dmenu-list-notes.sh
+bindsym $mod+Shift+n exec ~/scripts/dmenu/dmenu-new-note.sh
+bindsym $mod+ctrl+y exec ~/scripts/dmenu/dmenu-ytdlp.sh
+bindsym $mod+Shift+e exec ~/scripts/dmenu/dmenu-emojis.sh
+bindsym $mod+Shift+a exec ~/scripts/dmenu/dmenu-archwiki.sh
+
+# Assign apps to workspaces
+for_window [class="Steam"] move to workspace $ws9
+for_window [class="discord"] move to workspace $ws2
+for_window [class="scedit"] floating enable
