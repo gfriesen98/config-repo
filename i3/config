@@ -17,8 +17,8 @@ set $browser firefox
 set $mod Mod4
 floating_modifier $mod
 
-gaps inner 10
-gaps outer 10
+gaps inner 5
+gaps outer 5
 for_window [class="^.*"] border pixel 1
 for_window [class="floating_term"] floating enable
 
